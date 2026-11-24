@@ -1,8 +1,16 @@
 {
   "repository": "Mayezi/MailX-releases",
-  "latestVersion": "0.93.0",
-  "updatedAt": "2026-11-24T02:27:34.700Z",
+  "latestVersion": "0.93.1",
+  "updatedAt": "2026-11-24T03:18:55.887Z",
   "releases": [
+    {
+      "version": "0.93.1",
+      "tagName": "v0.93.1",
+      "name": "MailX v0.93.1",
+      "publishedAt": "2026-11-24T03:18:55.883Z",
+      "releaseUrl": "https://github.com/Mayezi/MailX-releases/releases/tag/v0.93.1",
+      "body": "## 性能优化\r\n\r\n- **列表切换秒开**：新增消息列表首屏缓存（stale-while-revalidate），切回已访问过的文件夹时先用上一轮结果立即铺满列表，再在后台静默重查校正，点击不再出现空白等待。\r\n- **空闲预取「已发送」**：应用空闲且未选中会话时，自动预取已发送首屏并写入缓存，首次点开已发送也走缓存秒开。\r\n- **重复查询合并**：一次切文件夹原本会因多轮状态更新触发多次相同查询，现改为 55ms 合并 + 同参数请求复用同一 Promise，实测一次点击从 5 次重复查询降为 1 次。\r\n- **列表响应瘦身**：Rust 与 Web 两端的列表查询改为轻量投影，列表不再返回 `body_html` / `body_text`（正文改由阅读面板按需加载），大幅减小 IPC / HTTP 响应体积与 JSON 解析开销。\r\n\r\n实测（12,001 封已发送、生产构建）：切换首屏约 120–140ms，单次列表查询 8–15ms。\r\n\r\n## 说明\r\n\r\n- 阅读邮件时正文仍在打开时按需加载，功能与显示不受影响。"
+    },
     {
       "version": "0.93.0",
       "tagName": "v0.93.0",
