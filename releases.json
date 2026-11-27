@@ -1,8 +1,16 @@
 {
   "repository": "Mayezi/MailX-releases",
-  "latestVersion": "0.100.0",
-  "updatedAt": "2026-11-27T14:38:02.952Z",
+  "latestVersion": "0.100.1",
+  "updatedAt": "2026-11-27T15:01:31.525Z",
   "releases": [
+    {
+      "version": "0.100.1",
+      "tagName": "v0.100.1",
+      "name": "MailX v0.100.1",
+      "publishedAt": "2026-11-27T15:01:31.491Z",
+      "releaseUrl": "https://github.com/Mayezi/MailX-releases/releases/tag/v0.100.1",
+      "body": "## 问题修复\n\n- **修复发件人与收件人未优先显示通讯录中文姓名的问题**：启动初始化改为全量加载通讯录联系人（移除 200 条截断限制），邮件列表与阅读器统一优先展示通讯录中保存的联系人姓名与头像。"
+    },
     {
       "version": "0.100.0",
       "tagName": "v0.100.0",
